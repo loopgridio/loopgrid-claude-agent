@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loopgrid-claude-agent"
+version = "0.1.0"
+description = "Signed decision, policy, approval and tool-action evidence for Claude Agent SDK"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE.md"]
+authors = [{name="LoopGrid contributors"}]
+dependencies = ["loopgrid>=0.8.0,<0.9", "claude-agent-sdk>=0.2.165,<0.3"]
+keywords = ["claude-agent-sdk", "anthropic", "agent-governance", "action-evidence", "ed25519", "audit-trail"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1.2", "twine>=6"]
+
+[project.urls]
+Homepage = "https://loopgrid.io"
+Repository = "https://github.com/loopgridio/loopgrid-claude-agent"
+Documentation = "https://loopgrid.io/integrations/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
